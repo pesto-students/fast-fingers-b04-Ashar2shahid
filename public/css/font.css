@@ -1,0 +1,15 @@
+@font-face {
+  font-family: LaserCorpsGradient;
+  src: local(LaserCorpsGradient-Regular), url(/fonts/lasercorpsgrad.ttf) format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: Gotham;
+  src: local(Gotham-Medium), url(/fonts/GothamMedium.ttf) format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+}
