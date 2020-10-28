@@ -78,7 +78,7 @@ export default function GameScreen(props) {
         [props.name]: [...prevGameScore[props.name], state.score],
       }));
       clearInterval(timerInterval.current);
-      //props.setGameState("end");
+      props.setGameState("end");
     }
   }, [state]);
 
