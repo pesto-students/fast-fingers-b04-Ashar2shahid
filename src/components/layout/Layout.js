@@ -29,10 +29,10 @@ const BackgroundPattern = styled.img`
 
 export default function Layout({ children }) {
   return (
-    <Fragment>
+    <div>
       <BackgroundGradient src={BackgroundGradientSVG} />
       <BackgroundPattern src={BackgroundPatternSVG} />
       {children}
-    </Fragment>
+    </div>
   );
 }
