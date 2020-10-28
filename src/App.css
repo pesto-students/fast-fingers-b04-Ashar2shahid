@@ -48,6 +48,7 @@
 
 .base-timer__label {
   position: absolute;
+  color: #ffffff;
 
   /* Size should match the parent container */
   width: 300px;

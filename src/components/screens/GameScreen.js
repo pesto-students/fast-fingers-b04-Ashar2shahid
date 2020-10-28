@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { Fragment, useRef } from "react";
 import { useEffect, useState } from "react";
 import CountdownCircle from "../Common/CountdownCircle";
 import { GameTitle, StartBox, InputBox } from "../Common/StyledComponents";
@@ -78,7 +78,7 @@ export default function GameScreen(props) {
         [props.name]: [...prevGameScore[props.name], state.score],
       }));
       clearInterval(timerInterval.current);
-      props.setGameState("end");
+      //props.setGameState("end");
     }
   }, [state]);
 
@@ -154,11 +154,22 @@ export default function GameScreen(props) {
               Scoreboard
             </StartBox>
             {props.gameScore[props.name] &&
-              props.gameScore[props.name].map((score, index) => (
-                <StartBox style={{ textAlign: "center" }} fontSize='20px' color='#FFFFFF'>
-                  Game{index + 1} : {score.toFixed(2)}
-                </StartBox>
-              ))}
+              props.gameScore[props.name].map((score, index) => {
+                return Math.max(...props.gameScore[props.name]) !== score ? (
+                  <StartBox style={{ textAlign: "center" }} fontSize='20px' color='#FFFFFF'>
+                    Game{index + 1} : {score.toFixed(2)}
+                  </StartBox>
+                ) : (
+                  <Fragment>
+                    <StartBox style={{ textAlign: "center" }} fontSize='8px'>
+                      PERSONAL BEST
+                    </StartBox>
+                    <StartBox style={{ textAlign: "center" }} fontSize='20px' color='#FFFFFF'>
+                      Game{index + 1} : {score.toFixed(2)}
+                    </StartBox>
+                  </Fragment>
+                );
+              })}
           </div>
           <div
             onClick={() => props.setGameState("start")}
