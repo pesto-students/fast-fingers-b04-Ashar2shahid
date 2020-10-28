@@ -1,20 +1,27 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import StartScreen from "./screens/StartScreen";
+import gameScreen from "./screens/GameScreen";
+import EndScreen from "./screens/EndScreen";
 
 export default function Base() {
   const screens = {
     start: StartScreen,
-    game: "game",
-    end: "end",
+    game: gameScreen,
+    end: EndScreen,
   };
   const [gameState, setGameState] = useState("start");
-  const [name, setName] = useState("");
+  const [name, setName] = useState("John");
   const [difficulty, setDifficulty] = useState("Easy");
+  const [gameScore, setGameScore] = useState({});
   return React.createElement(screens[gameState], {
     setGameState: setGameState,
-    setName: setName,
-    setDifficulty: setDifficulty,
     gameState: gameState,
+    setName: setName,
+    name: name,
+    setDifficulty: setDifficulty,
+    difficulty: difficulty,
+    setGameScore: setGameScore,
+    gameScore: gameScore,
   });
 }

@@ -9,7 +9,7 @@ export const KeyBoardImage = styled.img`
 
 export const GameTitle = styled.div`
   font-family: LaserCorpsGradient;
-  font-size: 60px;
+  font-size: ${(props) => (props.fontSize ? props.fontSize : "60px")};
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
@@ -69,12 +69,12 @@ export const SelectBox = styled.select`
 export const StartBox = styled.div`
   text-shadow: 0 0 16px rgba(0, 0, 0, 0.16);
   font-family: Gotham;
-  font-size: 48px;
+  font-size: ${(props) => (props.fontSize ? props.fontSize : "48px")};
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.21;
   letter-spacing: normal;
   text-align: left;
-  color: #ff5155;
+  color: ${(props) => (props.color ? props.color : "#ff5155")};
 `;

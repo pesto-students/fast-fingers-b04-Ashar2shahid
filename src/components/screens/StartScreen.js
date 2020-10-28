@@ -2,7 +2,7 @@ import React from "react";
 import { GameTitle, GameDescription, InputBox, KeyBoardImage, SelectBox, StartBox } from "../Common/StyledComponents";
 import CustomDropDown from "../Common/CustomDropDown";
 
-export default function startScreen({ setDifficulty, setName, setGameState }) {
+export default function StartScreen({ setDifficulty, setName, setGameState }) {
   return (
     <div className='container'>
       <div className='row'>
